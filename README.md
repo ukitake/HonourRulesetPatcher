@@ -2,8 +2,7 @@
 
 Thanks to https://github.com/Norbyte/lslib under the hood. 
 
-Work around the BG3 Custom Rules bugs Multiplayer that prevent you from starting a multiplayer game with Custom Rules: Honour Ruleset + No Single Save reliably.
-
+Work around the BG3 Custom Rules bugs that prevent you from starting a multiplayer game with Custom Rules: Honour Ruleset + No Single Save reliably.
 There are other well documented workarounds that work for up to 4 players, but AFAIK it was impossible to start a multiplayer game with 5+ player characters with Honour Ruleset.
 
 ## HOW TO USE IT
