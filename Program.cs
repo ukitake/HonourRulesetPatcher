@@ -180,14 +180,14 @@ var makeSingleSaveCustomRulesetValue = () =>
 
 // patch the text files
 XDocument meta = XDocument.Load($"{tempSavePath}\\meta.lsx");
-// find the GustavDev node and add the Honour Mode mod right after it
-var gustavDev = meta.DescendantNodes().Where(e => (e as XElement)?.Attribute("value")?.Value == "GustavX").FirstOrDefault()?.Parent;
-if (gustavDev == null)
+// find the GustavX node and add the Honour Mode mod right after it
+var gustavX = meta.DescendantNodes().Where(e => (e as XElement)?.Attribute("value")?.Value == "GustavX").FirstOrDefault()?.Parent;
+if (gustavX == null)
 {
-    Error("ERROR: No 'GustavDev' <node> found in meta.lsx file.\nPress any key to exit...");
+    Error("ERROR: No 'GustavX' <node> found in meta.lsx file.\nPress any key to exit...");
     return;
 }
-gustavDev.AddAfterSelf(makeHonourNode());
+gustavX.AddAfterSelf(makeHonourNode());
 
 // find the Standard ruleset entry and change it to Honour ruleset (I think this is what's happening)
 var ruleSet = meta.DescendantNodes().Where(e => (e as XElement)?.Attribute("value")?.Value == "3f1cb183-ef6e-4db6-b2ed-a703cb217264").FirstOrDefault();
@@ -244,13 +244,13 @@ else
 meta.Save($"{tempSavePath}\\meta.lsx");
 
 XDocument globals = XDocument.Load($"{tempSavePath}\\Globals.lsx");
-var globalsGustavDev = globals.DescendantNodes().Where(e => (e as XElement)?.Attribute("value")?.Value == "GustavX").FirstOrDefault()?.Parent;
-if (globalsGustavDev == null)
+var globalsGustavX = globals.DescendantNodes().Where(e => (e as XElement)?.Attribute("value")?.Value == "GustavX").FirstOrDefault()?.Parent;
+if (globalsGustavX == null)
 {
-    Error("ERROR: No 'GustavDev' <node> found in Globals.lsx file.\nPress any key to exit...");
+    Error("ERROR: No 'GustavX' <node> found in Globals.lsx file.\nPress any key to exit...");
     return;
 }
-globalsGustavDev.AddAfterSelf(makeHonourNode());
+globalsGustavX.AddAfterSelf(makeHonourNode());
 globals.Save($"{tempSavePath}\\Globals.lsx");
 
 // convert them back
